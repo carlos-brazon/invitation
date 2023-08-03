@@ -5,7 +5,7 @@ const Form = ({setList, setControl2}) => {
 
     const handleInput = () => {
         const inputName = event.target.name;
-        setUser(prev => ({ ...prev, [inputName]: event.target.value }));
+        setUser(prev => ({ ...prev, [inputName]: (event.target.value).replace(/[^a-z]/g, '') }));
     }
     const handleSubmit = async () => {
         event.preventDefault();
@@ -13,9 +13,9 @@ const Form = ({setList, setControl2}) => {
         setControl2(false);
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <input className='rounded border border-red-700 w-52 p-1 hover:border-red-900 outline-red-400' type="text" name='nombre' onChange={handleInput} value={user.nombre || ''} placeholder='Escribe tu primer nombre' />
-            <input className='border p-2' type="submit" />
+        <form className='flex gap-2' onSubmit={handleSubmit}>
+            <input className='rounded border border-red-700 w-48 p-1 hover:border-red-900 outline-red-400' type="text" name='name' onChange={handleInput} value={user.name || ''} placeholder='Escribe tu primer nombre' />
+            <input className='border p-1 rounded-md bg-red-50 hover:bg-red-400' type="submit" />
         </form>
     )
 }
