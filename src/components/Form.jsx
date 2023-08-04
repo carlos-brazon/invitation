@@ -5,11 +5,12 @@ const Form = ({setList, setControl2}) => {
 
     const handleInput = () => {
         const inputName = event.target.name;
-        setUser(prev => ({ ...prev, [inputName]: (event.target.value).replace(/[^a-z]/g, '') }));
+        const inputValue = (event.target.value)
+        setUser(prev => ({ ...prev, [inputName]: inputValue.replace(/[^\sa-zA-Z]/g, '')}));
     }
     const handleSubmit = async () => {
         event.preventDefault();
-        setList(prev => [ {...user}]);
+        setList(prev => [ {...user, name: user.name.toLowerCase()}]);
         setControl2(false);
     }
     return (

@@ -15,7 +15,7 @@ const Invitation2 = ({ person: { img, title, text, question }, control2 }) => {
       <p>{title}</p>
       <p className='w-[250px]'>{text}</p>
       <img className='w-40 h-60 rounded-full' src={img} alt="" />
-      <p>{question}</p>
+      <p className='text-lg font-semibold'>{question}</p>
       <i className={ selectedValue == 'no' ?`absolute fa-solid fa-heart-crack fa-2xl text-9xl text-red-700` : ''}></i>
       <div className={!selectedValue.length  || selectedValue == 'no' ? 'hidden' : '' }>
         <div className="bubble"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">' +
