@@ -65,11 +65,11 @@ const Layout = () => {
             <img className='rounded-full w-60 h-40 bg-cover' src={present} alt="" />
             <div className='flex flex-col items-center'>
                 <p>Tengo una pregunta importante para tí</p>
-                <p>Like</p>
+                <p className={person[0]?.title?.length ? 'hidden' : ''}>Like</p>
                 <i onClick={() => setControl(prev => false)} className={`${control ? 'fa-regular' : 'fa-solid animate-jump animate-infinite'} fa-heart fa-2xl text-red-700 text-6xl`}></i>
             </div>
             <div className={` flex items-center flex-col gap-2 ${control ? 'hidden' : ''}`}>
-                <p>Pero primero tienes que darme tu nombre</p>
+                <p className={person[0]?.title?.length ? 'hidden' : ''}>Pero primero tienes que darme tu nombre</p>
                 <Form setList={setList} person={person} setControl2={setControl2} />
             </div>
             <Invitation2 person={person[0] ? person[0] : ''} control2={control2} />
