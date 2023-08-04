@@ -2,18 +2,14 @@ import React, { useState } from 'react'
 
 const Invitation2 = ({ person: { img, title, text, question }, control2 }) => {
   const [selectedValue, setSelectedValue] = useState('');
-
-
-
   const handleRadioChange = (event) => {
     setSelectedValue(event.target.value);
-    // setSelectedValue('si');
   };
 
   return (
     <div className={`flex flex-col items-center gap-2 relative ${control2 ? 'hidden' : ''}`}>
       <p>{title}</p>
-      <p className='w-[250px]'>{text}</p>
+      <p className='w-[250px] text-justify'>{text}</p>
       <img className='w-40 h-60 rounded-full' src={img} alt="" />
       <p className='text-lg font-semibold'>{question}</p>
       <i className={ selectedValue == 'no' ?`absolute fa-solid fa-heart-crack fa-2xl text-9xl text-red-700` : ''}></i>

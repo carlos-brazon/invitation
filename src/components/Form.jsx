@@ -7,6 +7,7 @@ const Form = ({setList, setControl2}) => {
         const inputName = event.target.name;
         const inputValue = (event.target.value)
         setUser(prev => ({ ...prev, [inputName]: inputValue.replace(/[^\sa-zA-Z]/g, '')}));
+        // setUser(prev => ({ ...prev, [inputName]: inputValue.replace(/[^a-zA-Z]/g, '')}));
     }
     const handleSubmit = async () => {
         event.preventDefault();

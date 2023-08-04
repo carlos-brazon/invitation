@@ -11,7 +11,7 @@ const Layout = () => {
     const [control, setControl] = useState(true)
     const [control2, setControl2] = useState(true)
     const [list, setList] = useState([]);
-  
+
     const users = [
         {
             name: 'felix',
@@ -31,21 +31,21 @@ const Layout = () => {
             name: 'angel',
             img: imgAngel,
             title: 'Hola tío Angel',
-            text: 'Mis papitos me han contado que tú siempre has acompañado a mi papá en las buenas y malas juntos siempre. Es por eso que ellos desean que también me acompañes y guíes siempre, siendo mi padrino.',
+            text: 'Mis papitos me han contado que tú siempre has acompañado a mi papá en las buenas y malas, juntos siempre. Es por eso que ellos desean que también me acompañes y guíes siempre, siendo mi padrino.',
             question: '¿Quieres ser mi padrino?'
         },
         {
             name: 'dannireth',
             img: imgAngel,
             title: 'Hola tía Dannireth',
-            text: 'Mis papitos me han contado que tú siempre has acompañado a mi papá en las buenas y malas juntos siempre. Es por eso que ellos desean que también me acompañes y guíes siempre, siendo mi madrina.',
+            text: 'Mis papitos me han contado que tú siempre has acompañado a mi papá en las buenas y malas, juntos siempre. Es por eso que ellos desean que también me acompañes y guíes siempre, siendo mi madrina.',
             question: '¿Quieres ser mi Madrina?'
         },
         {
             name: 'oscar',
             img: imgOscar,
             title: 'Hola tío Oscar',
-            text: 'Mi papito siempre me cuenta historias y dice que eres el mejor hermano del mundo, yo quiero formar parte de esas historias y que seas el mejor tío del mundo por eso hacerte una pregunta muy importante',
+            text: 'Mi papito siempre me cuenta historias y dice que eres el mejor hermano del mundo, yo quiero formar parte de esas historias y que seas el mejor tío del mundo por eso quiero hacerte una pregunta muy importante',
             question: '¿Quieres ser mi padrino?'
         },
         {
@@ -55,11 +55,11 @@ const Layout = () => {
             text: 'Necesito hacerte una pregunta muy importante',
             question: '¿Quieres ser mi Madrina?'
         },
-        
+
 
 
     ]
-const person = users?.filter(objPerson => objPerson.name ==list[0]?.name)
+    const person = users?.filter(objPerson => objPerson.name == list[0]?.name)
 
     return (
         <div className='w-screen h-[1110px] bg-red-300 flex flex-col items-center gap-2 p-2'>
@@ -71,11 +71,11 @@ const person = users?.filter(objPerson => objPerson.name ==list[0]?.name)
                 <p>Like</p>
                 <i onClick={() => setControl(prev => false)} className={`${control ? 'fa-regular' : 'fa-solid'} fa-heart fa-2xl text-red-700 text-6xl`}></i>
             </div>
-            <div className={` flex items-center flex-col ${control ? 'hidden' : ''}`}>
+            <div className={` flex items-center flex-col gap-2 ${control ? 'hidden' : ''}`}>
                 <p>Pero primero tienes que darme tu nombre</p>
                 <Form setList={setList} setControl2={setControl2} />
             </div>
-            <Invitation2 person={person[0] ? person[0]:''} control2={control2} />
+            <Invitation2 person={person[0] ? person[0] : ''} control2={control2} />
             <Outlet />
         </div>
     )
