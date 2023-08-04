@@ -45,7 +45,7 @@ const Layout = () => {
             name: 'oscar',
             img: imgOscar,
             title: 'Hola tío Oscar',
-            text: 'Mi papito siempre me cuenta historias y dice que eres el mejor hermano del mundo, yo quiero formar parte de esas historias y que seas el mejor tío-padrino del mundo que meguies y me acompañes por siempre .',
+            text: 'Mi papito siempre me cuenta historias y dice que eres el mejor hermano del mundo, yo quiero formar parte de esas historias y que seas el mejor tío-padrino del mundo que me guies y me acompañes por siempre .',
             question: '¿Quieres ser mi padrino?'
         },
         {
