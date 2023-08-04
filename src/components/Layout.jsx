@@ -45,35 +45,32 @@ const Layout = () => {
             name: 'oscar',
             img: imgOscar,
             title: 'Hola tío Oscar',
-            text: 'Mi papito siempre me cuenta historias y dice que eres el mejor hermano del mundo, yo quiero formar parte de esas historias y que seas el mejor tío del mundo por eso quiero hacerte una pregunta muy importante',
+            text: 'Mi papito siempre me cuenta historias y dice que eres el mejor hermano del mundo, yo quiero formar parte de esas historias y que seas el mejor tío-padrino del mundo que meguies y me acompañes por siempre .',
             question: '¿Quieres ser mi padrino?'
         },
         {
             name: 'mileidy',
             img: imgOscar,
-            title: 'Hola tía Mileidy',
-            text: 'Necesito hacerte una pregunta muy importante',
+            title: 'Hola Mileidy',
+            text: 'Mi mami me contó que desde que te conoció has sido una buena amiga, es por eso que mis papitos quieren que me acompañes y guies siendo mi madrina',
             question: '¿Quieres ser mi Madrina?'
         },
-
-
-
     ]
     const person = users?.filter(objPerson => objPerson.name == list[0]?.name)
 
     return (
         <div className='w-screen h-[1110px] bg-red-300 flex flex-col items-center gap-2 p-2'>
             <div>¡Hola!</div>
-            <div className='text-2xl'>Soy Alicia</div>
+            <div className='text-2xl animate-wiggle animate-infinite'>Soy Alicia</div>
             <img className='rounded-full w-60 h-40 bg-cover' src={present} alt="" />
             <div className='flex flex-col items-center'>
                 <p>Tengo una pregunta importante para tí</p>
                 <p>Like</p>
-                <i onClick={() => setControl(prev => false)} className={`${control ? 'fa-regular' : 'fa-solid'} fa-heart fa-2xl text-red-700 text-6xl`}></i>
+                <i onClick={() => setControl(prev => false)} className={`${control ? 'fa-regular' : 'fa-solid animate-jump animate-infinite'} fa-heart fa-2xl text-red-700 text-6xl`}></i>
             </div>
             <div className={` flex items-center flex-col gap-2 ${control ? 'hidden' : ''}`}>
                 <p>Pero primero tienes que darme tu nombre</p>
-                <Form setList={setList} setControl2={setControl2} />
+                <Form setList={setList} person={person} setControl2={setControl2} />
             </div>
             <Invitation2 person={person[0] ? person[0] : ''} control2={control2} />
             <Outlet />
