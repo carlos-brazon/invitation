@@ -60,11 +60,9 @@ const Layout = () => {
 
     ]
 const person = users?.filter(objPerson => objPerson.name ==list[0]?.name)
-console.log(person);
-    console.log(list);
 
     return (
-        <div className='w-screen h-full bg-red-300 flex flex-col items-center gap-2 p-2'>
+        <div className='w-screen h-[1050px] bg-red-300 flex flex-col items-center gap-2 p-2'>
             <div>¡Hola!</div>
             <div className='text-2xl'>Soy Alicia</div>
             <img className='rounded-full w-60 h-40 bg-cover' src={present} alt="" />
